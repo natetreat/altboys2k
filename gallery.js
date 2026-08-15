@@ -11,6 +11,10 @@ const IMAGES = [
 const IMAGES_JSON = 'images/index.json';
 let RANDOMIZE = true;
 
+function imageUrl(filename) {
+    return `images/${encodeURIComponent(filename)}`;
+}
+
 function shuffleArray(a) {
     for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -47,13 +51,13 @@ function renderGallery(list) {
     list.forEach((filename, idx) => {
         const link = document.createElement('a');
         link.className = 'masonry-item';
-        link.href = `images/${filename}`;
+        link.href = imageUrl(filename);
         link.dataset.index = idx;
         link.dataset.filename = filename;
         link.rel = 'noopener';
 
         const img = document.createElement('img');
-        img.src = `images/${filename}`;
+        img.src = imageUrl(filename);
         img.alt = filename;
         img.loading = 'lazy';
 
@@ -75,7 +79,7 @@ function renderGallery(list) {
 let _currentList = [];
 function openLightbox(index, list) {
     _currentList = list.slice();
-    const src = `images/${list[index]}`;
+    const src = imageUrl(list[index]);
     const lb = document.getElementById('lightbox');
     const img = document.getElementById('lightboxImg');
     img.src = src; img.alt = list[index];
@@ -99,7 +103,7 @@ function showNeighbor(delta) {
     idx = (idx + delta + _currentList.length) % _currentList.length;
     lb.dataset.index = idx;
     const img = document.getElementById('lightboxImg');
-    img.src = `images/${_currentList[idx]}`;
+    img.src = imageUrl(_currentList[idx]);
     img.alt = _currentList[idx];
 }
 
