@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — altboys2k</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            min-height: 100%;
+            font-family: "Gloria Hallelujah", cursive;
+            color: #fff;
+            background: linear-gradient(rgba(0, 0, 0, .28), rgba(0, 0, 0, .72)), url("images/the story section.png") center/cover no-repeat;
+            background-attachment: fixed;
+        }
+
+        body {
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            filter: blur(1px);
+            transform: scale(1.02);
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: rgba(0, 0, 0, .12);
+            pointer-events: none;
+        }
+
+        nav {
+            height: 72px;
+            background: rgba(0, 0, 0, .92);
+            border-top: 1px solid rgba(255, 255, 255, .15);
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 54px;
+        }
+
+        nav a {
+            color: #eff1ef;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: .02em;
+            text-transform: uppercase;
+            transition: opacity .2s, transform .2s;
+        }
+
+        nav a:hover {
+            opacity: 1;
+            color: rgb(13, 245, 44);
+            transform: translateY(-1px);
+        }
+
+        .nut-link {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        .nut-link:hover {
+            color: #ffe866;
+        }
+
+        .bio-page {
+            min-height: calc(100vh - 72px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 20px 80px;
+            background: url('images/the story.png') no-repeat center center;
+            background-size: cover;
+        }
+
+        .bio-header {
+            text-align: center;
+            font-size: clamp(28px, 4vw, 52px);
+            line-height: 1.2;
+            margin: 0 0 28px;
+            letter-spacing: .02em;
+            text-shadow: 0 3px 12px rgba(0, 0, 0, .4);
+        }
+
+        .bio-card {
+            width: min(760px, 88vw);
+            padding: 30px 32px;
+        }
+
+        .bio-card p {
+            margin: 0 0 18px;
+            font-size: clamp(16px, 2vw, 22px);
+            line-height: 1.9;
+            color: #f3f3f3;
+        }
+
+        .bio-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 12px;
+            margin-top: 32px;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                gap: 24px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .bio-card {
+                padding: 22px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Audio</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">The Plot</a>
+    </nav>
+
+    <main class="bio-page">
+        <h1 class="bio-header">The Story So Far...</h1>
+
+        <section class="bio-card" aria-label="Biography section">
+            <p>Once upon time in the land of Portland Oregon, there was skinny teenage boy with thick long hair who
+                wanted a girlfriend. Unfortunately that wasn’t working out so he started writing songs instead. </p>
+            <p>One day
+                in the middle of calculus class, he impulsively decided to kill his old self and shave his long
+                beautiful hair off. On that day he was reborn as The Cosplay Jesus.</p>
+            <p>Now Cosplay Jesus has embarked on a holy war with his demons in pursuit of international rockstardom.
+                Failure is not an option.</p>
+            <iframe data-testid="embed-iframe" style="border-radius:12px"
+                src="https://open.spotify.com/embed/playlist/5ew5BLWa6FJuIKMzIoyn1T?utm_source=generator&theme=0&si=6808250826c74f56"
+                width="100%" height="152" frameBorder="0" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+            <h2>Website designed and built by <a class="nut-link" href="https://www.instagram.com/natetreat_/"
+                    target="_blank" rel="noopener">Nate Treat</a></h2>
+        </section>
+
+    </main>
+</body>
+
+</html>

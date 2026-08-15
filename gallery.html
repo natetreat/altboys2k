@@ -1,0 +1,185 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Gallery — altboys2k</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Masonry using CSS columns; zero gap between photos */
+        :root {
+            --col-width: 280px
+        }
+
+        .gloria-hallelujah-regular {
+            font-family: "Gloria Hallelujah", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+
+        body {
+            background: #111;
+            color: #fff;
+            margin: 0;
+            font-family: "Gloria Hallelujah", cursive;
+            background-image: linear-gradient(rgba(0, 0, 0, .35), rgba(0, 0, 0, .4)), url("images/gallery background.png");
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .wrap {
+            padding: 20px
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 18px
+        }
+
+        .btn {
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .08);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer
+        }
+
+        .masonry {
+            column-width: var(--col-width);
+            column-gap: 0;
+            /* zero padding between photos */
+            width: min(1200px, 96vw);
+            margin: 0 auto;
+        }
+
+        .masonry-item {
+            display: inline-block;
+            width: 100%;
+            break-inside: avoid;
+            margin: 0;
+            padding: 0
+        }
+
+        .masonry-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* small caption overlay when hovered (optional) */
+        .masonry-item a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        @media (max-width:600px) {
+            :root {
+                --col-width: 140px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Audio</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">The Plot</a>
+    </nav>
+    <div class="wrap">
+        <div class="toolbar">
+
+        </div>
+
+        <main>
+            <section class="masonry" id="gallery" aria-label="Photo gallery">
+                <!-- images injected by gallery.js -->
+            </section>
+        </main>
+    </div>
+
+    <script src="gallery.js"></script>
+    <!-- Lightbox modal -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <button id="lightboxClose" class="lightbox-close" aria-label="Close">×</button>
+        <button id="lightboxPrev" class="lightbox-nav lightbox-prev" aria-label="Previous">‹</button>
+        <div class="lightbox-center" id="lightboxCenter">
+            <img id="lightboxImg" src="" alt="" />
+        </div>
+        <button id="lightboxNext" class="lightbox-nav lightbox-next" aria-label="Next">›</button>
+    </div>
+
+    <style>
+        /* Lightbox styles */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, .88);
+            z-index: 9999
+        }
+
+        .lightbox.open {
+            display: flex
+        }
+
+        .lightbox-center {
+            max-width: 96vw;
+            max-height: 96vh;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .lightbox-center img {
+            max-width: 100%;
+            max-height: 100%;
+            box-shadow: 0 10px 60px rgba(0, 0, 0, .6)
+        }
+
+        .lightbox-close {
+            position: fixed;
+            top: 18px;
+            right: 18px;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer
+        }
+
+        .lightbox-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 48px;
+            cursor: pointer;
+            padding: 8px
+        }
+
+        .lightbox-prev {
+            left: 8px
+        }
+
+        .lightbox-next {
+            right: 8px
+        }
+    </style>
+</body>
+
+</html>

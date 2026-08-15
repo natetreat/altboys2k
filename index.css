@@ -1,0 +1,159 @@
+ * {
+   box-sizing: border-box
+ }
+
+ .gloria-hallelujah-regular {
+   font-family: "Gloria Hallelujah", cursive;
+   font-weight: 400;
+   font-style: normal;
+ }
+
+
+ html,
+ body {
+   margin: 0;
+   min-height: 100%;
+   font-family: "Gloria Hallelujah", cursive;
+   font-weight: 400;
+   font-style: normal;
+   color: #fff;
+   background: linear-gradient(rgba(0, 0, 0, .28), rgba(0, 0, 0, .32)), url("images/cosplay%20background.png") center/cover no-repeat;
+ }
+
+ body {
+   min-height: 100vh;
+   position: relative;
+   overflow-x: hidden
+ }
+
+ body::before {
+   content: "";
+   position: fixed;
+   inset: 0;
+   z-index: -2;
+   /* Use URL-encoded space and slightly reduce overlay opacity so image shows */
+
+   filter: blur(1px);
+   transform: scale(1.02);
+ }
+
+ body::after {
+   content: "";
+   position: fixed;
+   inset: 0;
+   z-index: -1;
+   background: rgba(0, 0, 0, .12);
+   pointer-events: none
+ }
+
+ nav {
+   height: 72px;
+   background: rgba(0, 0, 0, .92);
+   border-top: 1px solid rgba(255, 255, 255, .15);
+   border-bottom: 1px solid rgba(255, 255, 255, .08);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 54px
+ }
+
+ nav a {
+   color: #eff1ef;
+   text-decoration: none;
+   font-size: 16px;
+   font-weight: 700;
+   letter-spacing: .02em;
+   text-transform: uppercase;
+   transition: opacity .2s, transform .2s
+ }
+
+ nav a:hover {
+   opacity: 1;
+   color: rgb(13, 245, 44);
+   transform: translateY(-1px)
+ }
+
+ main {
+   min-height: calc(100vh - 72px);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 70px 20px
+ }
+
+ .content {
+   width: min(600px, 92vw);
+   padding: 38px 0;
+ }
+
+ .artist {
+   text-align: center;
+   font-size: clamp(42px, 7vw, 68px);
+   line-height: 1;
+   font-weight: 800;
+   letter-spacing: -.045em;
+   margin: 0 0 34px;
+   text-shadow: 0 3px 15px rgba(0, 0, 0, .45)
+ }
+
+ .links {
+   display: grid;
+   gap: 16px
+ }
+
+ .links a {
+   text-align: center;
+   font-size: 26px;
+   font-weight: 700;
+   color: #fff;
+   text-decoration: none;
+   background: rgba(0, 0, 0, .42);
+   padding: 16px 24px;
+   border-radius: 8px;
+   transition: background .2s, transform .2s
+ }
+
+ h2 {
+   text-align: center;
+   font-size: 30px;
+   font-weight: 400;
+   margin: 0 0 34px;
+   text-shadow: 0 3px 15px rgba(0, 0, 0, .45)
+ }
+
+ .music-link {
+   min-height: 82px;
+   border: 2px solid rgba(255, 255, 255, .9);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: #fff;
+   text-decoration: none;
+   background: rgba(0, 0, 0, .42);
+   font-size: 19px;
+   font-weight: 700;
+   transition: background .2s, transform .2s
+ }
+
+ .music-link:hover {
+   background: rgba(122, 248, 5, 0.164);
+   transform: translateY(-2px)
+ }
+
+ @media(max-width:600px) {
+   nav {
+     gap: 24px
+   }
+
+   nav a {
+     font-size: 12px
+   }
+
+   .content {
+     padding: 28px 20px
+   }
+
+   .music-link {
+     min-height: 70px
+   }
+ }
